@@ -56,6 +56,7 @@ Note: Some playback & device APIs require a Spotify Premium account.
 
 ## 📁 Project Structure
 
+```
 .
 ├── atoms/              # Recoil state atoms (e.g. currentTrackId, isPlaying)
 ├── components/         # UI components (Player, Sidebar, SongRow, etc.)
@@ -67,6 +68,7 @@ Note: Some playback & device APIs require a Spotify Premium account.
 ├── next.config.js
 ├── tailwind.config.js
 └── package.json
+```
 
 ------------------------------------------------------------
 
@@ -82,30 +84,43 @@ Note: Some playback & device APIs require a Spotify Premium account.
 
 Create `.env` in project root:
 
+```env
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your_random_secret
 
 SPOTIFY_CLIENT_ID=your_spotify_client_id
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
 
+# Optional
 JWT_SECRET=another_random_string
+```
 
-Add Redirect URI in Spotify dashboard:
+Add Redirect URIs in the Spotify dashboard:
+
+```
 http://localhost:3000/api/auth/callback/spotify
 https://your-domain.com/api/auth/callback/spotify
+```
 
 ### Installation & Running
 
+```bash
+# Install dependencies
 npm install
+
+# Start development
 npm run dev
 # Open http://localhost:3000
 
-npm run build && npm start   # production
+# Build & run production
+npm run build && npm start
+```
 
 ------------------------------------------------------------
 
 ## 🔐 Spotify API Scopes
 
+```text
 user-read-email
 user-read-private
 user-read-playback-state
@@ -114,36 +129,39 @@ user-read-currently-playing
 user-library-read
 playlist-read-private
 user-read-recently-played
+```
 
 ------------------------------------------------------------
 
 ## 🧩 Key Modules & Architecture
 
-- hooks/useSpotify — Initializes Spotify API client
-- hooks/useSongInfo — Fetches detailed track info
-- components/Player — Playback UI, control buttons, progress bar
-- components/Sidebar — Navigation + playlists
-- components/SongRow — Track row UI
-- Recoil atoms: currentTrackIdState, isPlayingState
+- `hooks/useSpotify` — Initializes Spotify API client
+- `hooks/useSongInfo` — Fetches detailed track info
+- `components/Player` — Playback UI, control buttons, progress bar
+- `components/Sidebar` — Navigation + playlists
+- `components/SongRow` — Track row UI
+- Recoil atoms: `currentTrackIdState`, `isPlayingState`
 - Auth & token refresh handled with NextAuth.js
 
 ------------------------------------------------------------
 
 ## 🧪 Scripts
 
-dev     – start dev server
-build   – build for production
-start   – start production server
-lint    – run ESLint
+| Script   | Description              |
+|----------|--------------------------|
+| dev      | Start dev server         |
+| build    | Build for production     |
+| start    | Start production server  |
+| lint     | Run ESLint               |
 
 ------------------------------------------------------------
 
 ## 🛠 Roadmap / Future Improvements
 
-- Volume control & mute
-- Enhanced seek UI
-- Better error & token handling
-- Playlist CRUD support
-- Offline caching
-- E2E tests (Cypress/Playwright)
-- Improved animations
+- [ ] Volume control & mute
+- [ ] Enhanced seek UI
+- [ ] Better error & token handling
+- [ ] Playlist CRUD support
+- [ ] Offline caching
+- [ ] E2E tests (Cypress/Playwright)
+- [ ] Improved animations
