@@ -17,6 +17,6 @@ export async function middleware(req) {
 
   //Redirect them to login if they don't have token AND are requesting a protected route
   if (!token && pathname !== "/login") {
-    return NextResponse.redirect("http://localhost:3000/login");
+    return NextResponse.redirect(`${process.env.NEXTAUTH_URL}/login`);
   }
 }
