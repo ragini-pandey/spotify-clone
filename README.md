@@ -7,6 +7,15 @@ Browse your library, search tracks, control playback on your active Spotify devi
 
 ------------------------------------------------------------
 
+## 🖼️ Screenshots
+
+![Login Screen](https://github.com/ragini-pandey/spotify-clone/blob/master/public/Screenshot-1.png)
+
+![Dashboard](https://github.com/ragini-pandey/spotify-clone/blob/master/public/Screenshot-2.png)
+
+
+------------------------------------------------------------
+
 ## 🧭 Table of Contents
 
 - Features
